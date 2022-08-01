@@ -25,7 +25,7 @@ function createIngredientsList(root, ingredientsArray) {
 
     finalListArray.push(elem);
   }
-  rootNode.append(...finalListArray);
+  return rootNode.append(...finalListArray);
 }
 
 createIngredientsList("#ingredients", ingredients);

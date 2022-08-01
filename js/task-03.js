@@ -12,3 +12,23 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+/**
+ * 
+ * @param {string} root 
+ * @param {array} imagesArray 
+ * @returns 
+ */
+
+function makeGallery(root, imagesArray) {
+  const rootNode = document.querySelector(root);
+  
+  const finalListArray = [];
+  for (let i = 0; i < imagesArray.length; i += 1) {
+    const li = `<li><img src=${imagesArray[i].url} alt='${imagesArray[i].alt}' height='100' width='200'/></li>`;
+
+    finalListArray.push(li);
+    rootNode.insertAdjacentHTML('beforeend', li);
+  }
+}
+makeGallery('.gallery', images);
