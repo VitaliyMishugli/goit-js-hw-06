@@ -17,15 +17,15 @@ const ingredients = [
 function createIngredientsList(root, ingredientsArray) {
   const rootNode = document.querySelector(root);
   console.log(rootNode);
-  const finalListArray = [];
+  const ingredientsMarkupList = [];
   for (let i = 0; i < ingredientsArray.length; i += 1) {
     const elem = document.createElement('li');
     elem.textContent = ingredientsArray[i];
     elem.classList.add('item');
 
-    finalListArray.push(elem);
+    ingredientsMarkupList.push(elem);
   }
-  return rootNode.append(...finalListArray);
+  return rootNode.append(...ingredientsMarkupList);
 }
 
 createIngredientsList("#ingredients", ingredients);

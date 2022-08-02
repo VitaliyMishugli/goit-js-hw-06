@@ -20,15 +20,17 @@ const images = [
  * @returns 
  */
 
-function makeGallery(root, imagesArray) {
+function makeGallery(root, imagesList) {
   const rootNode = document.querySelector(root);
   
-  const finalListArray = [];
-  for (let i = 0; i < imagesArray.length; i += 1) {
-    const li = `<li><img src=${imagesArray[i].url} alt='${imagesArray[i].alt}' height='100' width='200'/></li>`;
+  const imagesMarkupList = [];
+  for (let i = 0; i < imagesList.length; i += 1) {
+    const { url, alt } = imagesList[i];
 
-    finalListArray.push(li);
-    rootNode.insertAdjacentHTML('beforeend', li);
+    const li = `<li><img src=${url} alt='${alt}' height='100' width='200'/></li>`;
+
+    imagesMarkupList.push(li);
   }
+   rootNode.insertAdjacentHTML("beforeend", imagesMarkupList.join(''));
 }
 makeGallery('.gallery', images);
